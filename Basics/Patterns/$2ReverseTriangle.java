@@ -9,7 +9,7 @@
  * * *
  * *
  */
-class Star2 {
+class $2ReverseTriangle {
 
     public static void printResult(int i) {
         for (int j = 0; j < i + 1; j++) {
@@ -30,7 +30,7 @@ class Star2 {
     }
 
     public static void main(String[] args) {
-        Star2 st2 = new Star2();
+        $2ReverseTriangle st2 = new $2ReverseTriangle();
         st2.result(5);
     }
 }

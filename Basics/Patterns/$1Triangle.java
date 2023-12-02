@@ -6,7 +6,8 @@
  * * * *
  * * * * *
  */
-class Star1 {
+
+class $1Triangle {
 
     public void result(int patternCount) {
         for (int i = 0; i < patternCount; i++) {
@@ -19,7 +20,7 @@ class Star1 {
     }
 
     public static void main(String[] args) {
-        Star2 st1 = new Star2();
+        $1Triangle st1 = new $1Triangle();
         st1.result(5);
     }
 }

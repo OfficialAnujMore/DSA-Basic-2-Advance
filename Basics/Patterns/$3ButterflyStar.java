@@ -10,7 +10,7 @@
 // **         **
 // *           *
 
-public class Star3 {
+public class $3ButterflyStar {
 
     static void printPattern(int i) {
         for (int j = 0; j < i + 1; j++) {

@@ -1,44 +1,50 @@
-// *           *
-// **         **
-// ***       ***
-// ****     ****
-// *****   *****
-// ****** ******
-// *****   *****
-// ****     ****
-// ***       ***
-// **         **
-// *           *
+// *                     * 
+// * *                 * *
+// * * *             * * *
+// * * * *         * * * *
+// * * * * *     * * * * *
+// * * * * * * * * * * * *
+// * * * * *     * * * * *
+// * * * *         * * * *
+// * * *             * * *
+// * *                 * *
+// *                     *
 
 public class $3ButterflyStar {
 
-    static void printPattern(int i) {
-        for (int j = 0; j < i + 1; j++) {
-            System.out.print("*");
+    private static void printStarPattern(int i, int n) {
+        int j;
+        // Loop for left wing
+        for (j = 1; j <= i; j++) {
+            System.out.print("* ");
         }
-    }
+        // Spaces
+        for (j = 1; j <= 2 * (n - i); j++) {
+            System.out.print("  ");
+        }
 
-    static void output(int i, int patternCount) {
-        int spaceCount = (((patternCount * 2) - 1) - (i * 2));
-        printPattern(i);
-        for (int j = 0; j < spaceCount; j++) {
-            System.out.print(" ");
+        // Loop for left wing
+        for (j = 1; j <= i; j++) {
+            System.out.print("* ");
         }
-        printPattern(i);
         System.out.println("");
     }
 
-    static void result(int patternCount) {
-        for (int i = 0; i < patternCount -1 ; i++) {
-            output(i, patternCount);
+    private static void printPattern(int n) {
+
+        int i;
+
+        for (i = 1; i <= n; i++) {
+            printStarPattern(i, n);
         }
-        for (int i = patternCount -1; i >= 0; i--) {
-            output(i, patternCount);
+
+        for (i = n - 1; i >= 1; i--) {
+            printStarPattern(i, n);
         }
+
     }
+
     public static void main(String[] args) {
-        result(6);
+        printPattern(6);
     }
 }
-
-

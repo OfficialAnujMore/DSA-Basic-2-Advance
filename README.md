@@ -6,7 +6,7 @@
 ## Features of java
 
 <p align="center">
-  <img src="https://github.com/OfficialAnujMore/DSA-Basic-2-Advance/assets/53031645/7748749d-d7e0-475f-853c-eb5d1edf5c3b" alt="Features of java" width="500"/>
+  <img src="https://github.com/OfficialAnujMore/DSA-Basic-2-Advance/assets/53031645/8402dbd3-de38-4e9c-8939-255aa89be219" alt="Features of java" width="500"/>
 </p>
 
 ## Topics covered

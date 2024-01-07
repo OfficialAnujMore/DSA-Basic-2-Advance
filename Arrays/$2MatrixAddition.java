@@ -1,6 +1,6 @@
-package Arrays.Matrix;
+package Arrays;
 
-public class $1MatrixAddition {
+public class $2MatrixAddition {
 
     private void result(int[][] mat1, int[][] mat2) {
         for (int i = 0; i < mat1.length; i++) {
@@ -17,7 +17,7 @@ public class $1MatrixAddition {
         int[][] mat1 = { { 1, 2, 3 }, { 4, 5, 6 } };
         int[][] mat2 = { { 4, 5, 6 }, { 1, 2, 3 } };
 
-        $1MatrixAddition obj = new $1MatrixAddition();
+        $2MatrixAddition obj = new $2MatrixAddition();
         obj.result(mat1, mat2);
 
     }

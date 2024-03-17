@@ -1,6 +1,6 @@
 package CollectionFramework.List.LinkedList;
 
-public class SingularLL {
+public class $1SingularLL {
     private Node head;
     private int size;
 
@@ -179,7 +179,7 @@ public class SingularLL {
 
     public static void main(String args[]) {
 
-        SingularLL lst = new SingularLL();
+        $1SingularLL lst = new $1SingularLL();
         // Insertion and deletetion of elements
         lst.insertAtFirst("B");
         lst.insertAtFirst("A");

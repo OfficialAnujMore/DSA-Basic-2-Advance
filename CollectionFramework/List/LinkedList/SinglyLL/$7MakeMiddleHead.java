@@ -1,6 +1,6 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
-public class $11SwapNodes {
+public class $7MakeMiddleHead {
     private Node head;
 
     class Node {
@@ -47,44 +47,41 @@ public class $11SwapNodes {
         System.out.println("");
     }
 
-    // public void result() {
-    // if (head == null && head.next == null) {
-    // return;
-    // }
+    public void result() {
+        if (head == null) {
+            return;
+        }
 
-    // Node currNode = head;
+        Node tempNode = null;
+        Node prevNode = head;
+        Node currNode = head.next;
 
-    // while (currNode !=null && currNode.next != null) {
+        // Finding middle element using two pointer approach
+        while (currNode != null && currNode.next != null) {
 
-    // int temp = currNode.data;
-    // currNode.data = currNode.next.data;
-    // currNode.next.data = temp;
-    // currNode = currNode.next.next;
-
-    // }
-    // }
-
-    public void resultRecursive(Node head) {
-        if (head != null && head.next != null) {
-            int temp = head.data;
-            head.data = head.next.data;
-            head.next.data = temp;
-            resultRecursive(head.next.next);
+            tempNode = prevNode;
+            currNode = currNode.next.next;
+            prevNode = prevNode.next;
 
         }
+        tempNode.next = prevNode.next;
+        prevNode.next = head;
+        head = prevNode;
+        System.out.println(prevNode.data);
+        System.out.println(tempNode.data);
+
     }
 
     public static void main(String[] args) {
 
-        $11SwapNodes lst = new $11SwapNodes();
+        $7MakeMiddleHead lst = new $7MakeMiddleHead();
 
         for (int i = 1; i <= 10; i++) {
             lst.insertElements(i);
 
         }
         lst.printLL();
-        // lst.result();
-        lst.resultRecursive(lst.head);
+        lst.result();
         lst.printLL();
     }
 

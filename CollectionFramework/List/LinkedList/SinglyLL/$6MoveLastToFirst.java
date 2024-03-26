@@ -1,6 +1,6 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
-public class $9AddOne {
+public class $6MoveLastToFirst {
     private Node head;
 
     class Node {
@@ -47,64 +47,37 @@ public class $9AddOne {
         System.out.println("");
     }
 
-    public void reverseLL() {
-
-        if (head == null && head.next == null) {
-            return;
-        }
-
-        Node prevNode = head;
-        Node curNode = prevNode.next;
-
-        while (curNode != null) {
-            Node nextNode = curNode.next;
-            curNode.next = prevNode;
-
-            prevNode = curNode;
-            curNode = nextNode;
-
-        }
-
-        head.next = null;
-        head = prevNode;
-    }
-
-    public void summation() {
-        Node currNode = head;
-
-        while (currNode != null) {
-            int carry = 1, sum;
-            sum = currNode.data + carry;
-
-            if (sum > 9) {
-                carry = 1;
-                sum = sum % 10;
-                currNode.data = sum;
-                currNode = currNode.next;
-            } else {
-                currNode.data = sum;
-                return;
-            }
-
-        }
-    }
-
-    public void result() {
+    private void result() {
         if (head == null) {
             return;
         }
-        reverseLL();
-        summation();
-        reverseLL();
+
+        Node currNode = head.next;
+        Node prevNode = head;
+
+        while (currNode != null) {
+
+            if (currNode.next == null) {
+                prevNode.next = head;
+                currNode.next = head.next;
+                head.next = null;
+                head = currNode;
+                return;
+            }
+            prevNode = currNode;
+            currNode = currNode.next;
+
+        }
     }
 
     public static void main(String[] args) {
 
-        $9AddOne lst = new $9AddOne();
-        lst.insertElements(1);
-        lst.insertElements(8);
-        lst.insertElements(9);
-        lst.insertElements(0);
+        $6MoveLastToFirst lst = new $6MoveLastToFirst();
+
+        for (int i = 1; i <= 4; i++) {
+            lst.insertElements(i);
+
+        }
         lst.printLL();
         lst.result();
         lst.printLL();

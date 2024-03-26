@@ -1,6 +1,6 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
-public class $6MoveLastToFirst {
+public class $11SwapNodes {
     private Node head;
 
     class Node {
@@ -47,39 +47,44 @@ public class $6MoveLastToFirst {
         System.out.println("");
     }
 
-    private void result() {
-        if (head == null) {
-            return;
-        }
+    // public void result() {
+    // if (head == null && head.next == null) {
+    // return;
+    // }
 
-        Node currNode = head.next;
-        Node prevNode = head;
+    // Node currNode = head;
 
-        while (currNode != null) {
+    // while (currNode !=null && currNode.next != null) {
 
-            if (currNode.next == null) {
-                prevNode.next = head;
-                currNode.next = head.next;
-                head.next = null;
-                head = currNode;
-                return;
-            }
-            prevNode = currNode;
-            currNode = currNode.next;
+    // int temp = currNode.data;
+    // currNode.data = currNode.next.data;
+    // currNode.next.data = temp;
+    // currNode = currNode.next.next;
+
+    // }
+    // }
+
+    public void resultRecursive(Node head) {
+        if (head != null && head.next != null) {
+            int temp = head.data;
+            head.data = head.next.data;
+            head.next.data = temp;
+            resultRecursive(head.next.next);
 
         }
     }
 
     public static void main(String[] args) {
 
-        $6MoveLastToFirst lst = new $6MoveLastToFirst();
+        $11SwapNodes lst = new $11SwapNodes();
 
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 1; i <= 10; i++) {
             lst.insertElements(i);
 
         }
         lst.printLL();
-        lst.result();
+        // lst.result();
+        lst.resultRecursive(lst.head);
         lst.printLL();
     }
 

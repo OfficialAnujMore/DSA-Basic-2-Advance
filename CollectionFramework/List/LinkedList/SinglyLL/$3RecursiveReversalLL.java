@@ -1,4 +1,4 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
 public class $3RecursiveReversalLL {
     private Node head;

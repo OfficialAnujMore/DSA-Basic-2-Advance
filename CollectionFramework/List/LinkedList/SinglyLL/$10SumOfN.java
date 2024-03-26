@@ -1,7 +1,11 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
-public class $7MakeMiddleHead {
+import java.util.Stack;
+
+public class $10SumOfN {
     private Node head;
+    static int summation = 0;
+    static int n;
 
     class Node {
         int data;
@@ -47,42 +51,56 @@ public class $7MakeMiddleHead {
         System.out.println("");
     }
 
-    public void result() {
+    public void result(int n) {
+        if (head == null) {
+            return;
+        }
+        Stack<Integer> st = new Stack<>();
+        Node currNode = head;
+        while (currNode != null) {
+            st.push(currNode.data);
+            currNode = currNode.next;
+
+        }
+        int summation = 0;
+        while (n > 0) {
+            int val = st.pop();
+            n--;
+            summation += val;
+
+        }
+
+        System.out.println(summation);
+    }
+
+    public void recursiveStackSummation(Node head) {
         if (head == null) {
             return;
         }
 
-        Node tempNode = null;
-        Node prevNode = head;
-        Node currNode = head.next;
+        recursiveStackSummation(head.next);
 
-        // Finding middle element using two pointer approach
-        while (currNode != null && currNode.next != null) {
-
-            tempNode = prevNode;
-            currNode = currNode.next.next;
-            prevNode = prevNode.next;
+        if (n > 0) {
+            summation += head.data;
+            n--;
 
         }
-        tempNode.next = prevNode.next;
-        prevNode.next = head;
-        head = prevNode;
-        System.out.println(prevNode.data);
-        System.out.println(tempNode.data);
-
     }
 
     public static void main(String[] args) {
 
-        $7MakeMiddleHead lst = new $7MakeMiddleHead();
+        $10SumOfN lst = new $10SumOfN();
 
         for (int i = 1; i <= 10; i++) {
             lst.insertElements(i);
 
         }
         lst.printLL();
-        lst.result();
-        lst.printLL();
+        // lst.result(3);
+        n = 3;
+        int num = n;
+        lst.recursiveStackSummation(lst.head);
+        System.out.format("Summation of last %d numbers is %d  ", num, summation);
     }
 
 }

@@ -1,6 +1,6 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
-public class $8DeleteAlternativeNode {
+public class template {
     private Node head;
 
     class Node {
@@ -51,21 +51,13 @@ public class $8DeleteAlternativeNode {
         if (head == null) {
             return;
         }
-
-        Node currNode = head;
-
-        while (currNode != null && currNode.next != null) {
-            currNode.next = currNode.next.next;
-            currNode = currNode.next;
-
-        }
     }
 
     public static void main(String[] args) {
 
-        $8DeleteAlternativeNode lst = new $8DeleteAlternativeNode();
+        template lst = new template();
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 10; i++) {
             lst.insertElements(i);
 
         }

@@ -1,7 +1,9 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
-public class template {
+public class $12DeletekthNode {
     private Node head;
+    static int k;
+    static int n = 1;
 
     class Node {
         int data;
@@ -51,18 +53,42 @@ public class template {
         if (head == null) {
             return;
         }
+
+        int n = 1;
+        Node prevNode = null;
+        Node currNode = head;
+
+        while (currNode != null) {
+            System.out.format("%d %d \n", k, n);
+            if (k == 1) {
+                head = null;
+                return;
+            } else if (n % k == 0) {
+
+                prevNode.next = currNode.next;
+                currNode = currNode.next;
+            } else {
+                prevNode = currNode;
+                currNode = currNode.next;
+            }
+            n++;
+
+        }
     }
 
     public static void main(String[] args) {
 
-        template lst = new template();
+        $12DeletekthNode lst = new $12DeletekthNode();
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 8; i++) {
             lst.insertElements(i);
 
         }
+        k = 3;
+
         lst.printLL();
         lst.result();
+
         lst.printLL();
     }
 

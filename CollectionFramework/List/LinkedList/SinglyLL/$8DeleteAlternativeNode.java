@@ -1,6 +1,6 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
-public class $9AddOneRecursive {
+public class $8DeleteAlternativeNode {
     private Node head;
 
     class Node {
@@ -47,28 +47,30 @@ public class $9AddOneRecursive {
         System.out.println("");
     }
 
-    public int result(Node head) {
-
+    public void result() {
         if (head == null) {
-            return 1;
+            return;
         }
 
-        int carry = result(head.next);
-        int sum = head.data + carry;
-        head.data = sum % 10;
-        return sum / 10;
+        Node currNode = head;
 
+        while (currNode != null && currNode.next != null) {
+            currNode.next = currNode.next.next;
+            currNode = currNode.next;
+
+        }
     }
 
     public static void main(String[] args) {
 
-        $9AddOneRecursive lst = new $9AddOneRecursive();
-        lst.insertElements(5);
-        lst.insertElements(7);
-        lst.insertElements(9);
-        lst.insertElements(9);
+        $8DeleteAlternativeNode lst = new $8DeleteAlternativeNode();
+
+        for (int i = 1; i <= 5; i++) {
+            lst.insertElements(i);
+
+        }
         lst.printLL();
-        lst.result(lst.head);
+        lst.result();
         lst.printLL();
     }
 

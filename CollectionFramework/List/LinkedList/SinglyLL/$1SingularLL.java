@@ -1,4 +1,4 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
 public class $1SingularLL {
     private Node head;

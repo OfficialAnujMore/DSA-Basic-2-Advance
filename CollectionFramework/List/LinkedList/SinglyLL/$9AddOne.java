@@ -1,9 +1,7 @@
-package CollectionFramework.List.LinkedList;
+package CollectionFramework.List.LinkedList.SinglyLL;
 
-public class $12DeletekthNode {
+public class $9AddOne {
     private Node head;
-    static int k;
-    static int n = 1;
 
     class Node {
         int data;
@@ -49,46 +47,66 @@ public class $12DeletekthNode {
         System.out.println("");
     }
 
-    public void result() {
-        if (head == null) {
+    public void reverseLL() {
+
+        if (head == null && head.next == null) {
             return;
         }
 
-        int n = 1;
-        Node prevNode = null;
+        Node prevNode = head;
+        Node curNode = prevNode.next;
+
+        while (curNode != null) {
+            Node nextNode = curNode.next;
+            curNode.next = prevNode;
+
+            prevNode = curNode;
+            curNode = nextNode;
+
+        }
+
+        head.next = null;
+        head = prevNode;
+    }
+
+    public void summation() {
         Node currNode = head;
 
         while (currNode != null) {
-            System.out.format("%d %d \n", k, n);
-            if (k == 1) {
-                head = null;
-                return;
-            } else if (n % k == 0) {
+            int carry = 1, sum;
+            sum = currNode.data + carry;
 
-                prevNode.next = currNode.next;
+            if (sum > 9) {
+                carry = 1;
+                sum = sum % 10;
+                currNode.data = sum;
                 currNode = currNode.next;
             } else {
-                prevNode = currNode;
-                currNode = currNode.next;
+                currNode.data = sum;
+                return;
             }
-            n++;
 
         }
     }
 
+    public void result() {
+        if (head == null) {
+            return;
+        }
+        reverseLL();
+        summation();
+        reverseLL();
+    }
+
     public static void main(String[] args) {
 
-        $12DeletekthNode lst = new $12DeletekthNode();
-
-        for (int i = 1; i <= 8; i++) {
-            lst.insertElements(i);
-
-        }
-        k = 3;
-
+        $9AddOne lst = new $9AddOne();
+        lst.insertElements(1);
+        lst.insertElements(8);
+        lst.insertElements(9);
+        lst.insertElements(0);
         lst.printLL();
         lst.result();
-
         lst.printLL();
     }
 

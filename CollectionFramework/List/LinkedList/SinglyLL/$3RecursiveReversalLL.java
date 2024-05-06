@@ -44,8 +44,8 @@ public class $3RecursiveReversalLL {
         }
 
         Node newHead = reverseList(head.next);
-        // System.out.println(head.data);
-        // System.out.println(head.next.next);
+        System.out.println(head.data);
+        System.out.println(head.next.next);
         head.next.next = head;
         head.next = null;
 

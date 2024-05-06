@@ -68,8 +68,9 @@ public class $5MidOfLL {
     public static void main(String[] args) {
         $5MidOfLL lst = new $5MidOfLL();
         lst.insertEle(1);
-        // lst.insertEle(2);
-        // lst.insertEle(2);
+        lst.insertEle(2);
+        lst.insertEle(3);
+        lst.insertEle(1);
         lst.printLL();
         lst.findMid();
     }
